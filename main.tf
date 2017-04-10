@@ -4,6 +4,10 @@ resource "aws_vpn_gateway" "default" {
   lifecycle {
     create_before_destroy = true
   }
+  
+  tags {
+    Name = "${var.name}"
+  }
 }
 
 resource "aws_vpn_gateway_attachment" "default" {
